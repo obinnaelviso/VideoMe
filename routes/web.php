@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'AppController@index')->name('index');
+
+Route::post('/', 'AppController@login')->name('login');
+
+Route::get('/chatroom', 'AppController@chatroom')->name('chatroom');

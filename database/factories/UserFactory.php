@@ -4,6 +4,8 @@
 use App\User;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
+use OpenTok\OpenTok;
+use OpenTok\MediaMode;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,11 +19,12 @@ use Illuminate\Support\Str;
 */
 
 $factory->define(User::class, function (Faker $faker) {
+    $otApi = new OpenTok(env('OPENTOK_API_KEY'), env('OPENTOK_API_SECRET'));
+    $session = $otApi->createSession(['mediaMode' => MediaMode::ROUTED]);
     return [
         'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
-        'email_verified_at' => now(),
-        'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+        'username' => $faker->username,
+        'session_id' => $session->getSessionId(),
         'remember_token' => Str::random(10),
     ];
 });
