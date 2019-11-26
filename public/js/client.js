@@ -10,8 +10,8 @@ var reject_btn = document.getElementById('reject');
 var end_btn = document.getElementById('end_btn');
 
 // call alerts
-var calltone = new Audio('/audio/call.mp3');
-var ringtone = new Audio('/audio/ring.mp3');
+var calltone = new Audio('audio/call.mp3');
+var ringtone = new Audio('audio/ring.mp3');
 
 loopTone(ringtone, calltone);
 
