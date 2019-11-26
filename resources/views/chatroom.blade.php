@@ -14,14 +14,14 @@
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <!-- Custom Fonts -->
-  <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-  <link href="/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
   <script src="https://static.opentok.com/v2/js/opentok.min.js"></script>
 
   <!-- Custom CSS -->
-  <link href="/css/stylish-portfolio.css" rel="stylesheet">
-  <link href="/css/app.css" rel="stylesheet" type="text/css">
+  <link href="css/stylish-portfolio.css" rel="stylesheet">
+  <link href="css/app.css" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -115,7 +115,7 @@
 
   <!-- Custom scripts for this template -->
   <script src="js/stylish-portfolio.min.js"></script>
-  <script src="/js/client.js"></script>
+  <script src="js/client.js"></script>
 
 </body>
 
