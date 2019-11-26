@@ -13,7 +13,7 @@
 
 Route::get('/', 'AppController@index')->name('index');
 
-Route::post('/', 'AppController@login')->name('login');
+Route::post('/login/', 'AppController@login')->name('login');
 
 Route::get('/logout', 'AppController@logout');
 
