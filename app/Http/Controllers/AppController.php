@@ -31,7 +31,7 @@ class AppController extends Controller
         $user = $this->user();
         $session_id = $user->session_id;
         $o_users = User::all()->except($user->id);
-        $api_key = env('OPENTOK_API_KEY');
+        $api_key = config('app.opentok_api_key');
         // Generate User Token
         $this->generateUserToken($user);
         return view('chatroom',compact(['session_id', 'user', 'o_users', 'api_key']));
@@ -42,7 +42,7 @@ class AppController extends Controller
     }
 
     public function generateToken($session_id) {
-        $otApi = new OpenTok(env('OPENTOK_API_KEY'), env('OPENTOK_API_SECRET'));
+        $otApi = new OpenTok(config('app.opentok_api_key'), config('app.opentok_api_secret'));
 
         return $otApi->generateToken($session_id);
     }

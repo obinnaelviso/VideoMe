@@ -228,4 +228,7 @@ return [
 
     ],
 
+    'opentok_api_key' => env('OPENTOK_API_KEY'),
+    'opentok_api_secret' => env('OPENTOK_API_SECRET')
+
 ];

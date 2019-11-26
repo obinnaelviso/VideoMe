@@ -19,7 +19,7 @@ use OpenTok\MediaMode;
 */
 
 $factory->define(User::class, function (Faker $faker) {
-    $otApi = new OpenTok(env('OPENTOK_API_KEY'), env('OPENTOK_API_SECRET'));
+    $otApi = new OpenTok(config('app.opentok_api_key'), config('app.opentok_api_secret'));
     $session = $otApi->createSession(['mediaMode' => MediaMode::ROUTED]);
     return [
         'name' => $faker->name,
