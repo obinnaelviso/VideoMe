@@ -112,7 +112,7 @@ h6 {
 
 .masthead.chatroom {
     color: white;
-    background-image: url("/img/shadow-people.jpg");
+    background-image: url("img/shadow-people.jpg");
     text-shadow: none;
 }
 
