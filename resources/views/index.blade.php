@@ -59,6 +59,11 @@
                     <div class="input-group-append">
                         <button class="btn btn-success" type="submit">Login</button>
                     </div>
+                    @if(session()->has('failed'))
+                        <div class="alert alert-danger">
+                            {{ session()->get('failed') }}
+                        </div>
+                    @endif
                 </div>
             </div>
         </form>
