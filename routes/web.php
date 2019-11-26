@@ -15,4 +15,6 @@ Route::get('/', 'AppController@index')->name('index');
 
 Route::post('/', 'AppController@login')->name('login');
 
+Route::get('/logout', 'AppController@logout');
+
 Route::get('/chatroom', 'AppController@chatroom')->name('chatroom');

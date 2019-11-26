@@ -1,0 +1,13 @@
+#subscriber {
+    width: 320px;
+    height: 240px;
+    display: inline-block;
+}
+
+#publisher {
+    width: 320px;
+    height: 240px;
+    display: inline-block;
+    /* bottom: 10px;
+    left: 10px; */
+}

@@ -22,7 +22,11 @@ class AppController extends Controller
 
         return redirect()->route('index')->with('failed', 'Invalid Username! Please check the manual for correct login details!');
     }
-    
+
+    public function logout() {
+        Auth::guard()->logout();
+    }
+
     public function chatroom() {
         $user = $this->user();
         $session_id = $user->session_id;

@@ -21,6 +21,7 @@
 
   <!-- Custom CSS -->
   <link href="/css/stylish-portfolio.css" rel="stylesheet">
+  <link href="/css/app.css" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -43,6 +44,7 @@
     </ul>
   </nav>
 
+
   <!-- Header -->
   <header class="masthead chatroom d-flex">
     <div class="container text-center my-auto">
@@ -50,9 +52,30 @@
       <input id="api_key" value="{{ $api_key }}" hidden>
       <input id="session_id" value="{{ $user->session_id }}" hidden>
       <input id="token" value="{{ $user->session_token }}" hidden>
+      <input id="username" value="{{ $user->username }}" hidden>
+
       <div id="videos">
-        <div id="subscriber"></div>
         <div id="publisher"></div>
+        <div id="subscriber"></div>
+      </div>
+      <div>
+        <button class="btn btn-danger btn-xl" id="end_btn" style="display: none">End Call</button>
+      </div>
+
+      {{-- call modal --}}
+      <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+            <!-- Modal body -->
+            <div class="modal-body" style="color: black">
+                <h5 id="call_msg">Someone is calling... </h5>
+                <button class="btn btn-success btn-sm" id="answer">Answer</button>
+                <button class="btn btn-sm btn-danger" id="reject">Reject</button>
+            </div>
+
+            </div>
+        </div>
       </div>
       {{-- <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a> --}}
     </div>
