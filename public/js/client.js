@@ -24,18 +24,18 @@ var session = OT.initSession(api_key, session_id);
 // Handling all of our errors here by alerting them
 function handleError(error) {
     if (error) {
-        alert(error.message);
+        console.error(error.message);
     }
 }
 
 function refreshPage() {
-    window.location = window.location;
+    location.reload();
 }
 
 // Connect to its own session
 session.connect(token, function (error) {
     if (error) {
-        alert(error.message);
+        console.error(error.message);
     } else {
         console.log("Session Connected");
     }
@@ -87,7 +87,7 @@ function call(session_id, token) {
     var session = OT.initSession(api_key, session_id);
     session.connect(token, function (error) {
         if (error) {
-            alert(error.message);
+            console.error(error.message);
         } else {
             var publisher = initializePublisher();
             clearSpace();
@@ -118,6 +118,7 @@ function call(session_id, token) {
             // Click end button to end call
             end_btn.addEventListener("click", function (event) {
                 session.unpublish(publisher);
+                refreshPage();
             })
         }
     });

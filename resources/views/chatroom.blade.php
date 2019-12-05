@@ -27,7 +27,7 @@
 
 <body id="page-top">
 
-  <!-- Navigation -->
+  {{-- <!-- Navigation -->
   <a class="menu-toggle rounded" href="#">
     <i class="fas fa-bars"></i>
   </a>
@@ -42,13 +42,13 @@
         </li>
       @endforeach
     </ul>
-  </nav>
+  </nav> --}}
 
 
   <!-- Header -->
   <header class="masthead chatroom d-flex">
     <div class="container text-center my-auto">
-      <h2 class="mb-1" id="notice">You are Online. <br /> Click on menu to make a video call to a user.</h2>
+      <h2 class="mb-1" id="notice">You are Online. <br /> Make a video call to a user online.</h2>
       <input id="api_key" value="{{ $api_key }}" hidden>
       <input id="session_id" value="{{ $user->session_id }}" hidden>
       <input id="token" value="{{ $user->session_token }}" hidden>
@@ -81,6 +81,27 @@
     </div>
     <div class="overlay"></div>
   </header>
+
+  <!-- About -->
+  <section class="content-section bg-light" id="about">
+    <div class="container-fluid">
+      <div class="row">
+          @foreach ($o_users as $o_user)
+            <div class="col-md-3 col-sm-6 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $o_user->username }} <span class="float-right fa fa-dot-circle" style="color: lime"></span></h5>
+                        <p class="card-text">Click on call button to initiate a call</p>
+                        <a href="#" class="btn btn-success" onclick="call('{{ $o_user->session_id }}','{{ $o_user->session_token }}');"><span class="fa fa-phone-alt"></span></a>
+                    </div>
+                </div>
+            </div>
+          @endforeach
+
+      </div>
+    </div>
+  </section>
+
 
   <!-- Footer -->
   <footer class="footer text-center">
